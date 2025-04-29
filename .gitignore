@@ -1,0 +1,30 @@
+# Ignorar la carpeta de configuración de VS Code
+.vscode
+
+# Ignorar sistema operativo archivos
+.DS_Store
+Thumbs.db
+
+# Ignorar logs
+.log
+
+# Ignorar carpetas temporales
+node_modules
+dist
+build
+temp
+tmp
+
+# Ignorar archivos de entorno (si los usas)
+.env
+.env.local
+.env..local
+
+# Ignorar archivos de empaquetado o dependencias
+.zip
+.tar.gz
+.rar
+
+# Ignorar configuraciones personales de usuario
+.sublime-workspace
+.code-workspace
