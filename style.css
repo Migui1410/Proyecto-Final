@@ -225,3 +225,109 @@ body{
     font-size: 1.2em;
     margin: 10px 0;
 }
+
+
+/*--------------------------------------*/
+/*--------------FOOTER------------------*/
+/*--------------------------------------*/
+
+footer {
+    background-color: rgba(63, 62, 62, 0.986);
+    width: 100vw;
+    padding: 2% 0;
+    font-family: Arial, sans-serif;
+}
+
+.listasf {
+    color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    text-align: left;
+}
+
+.listasf h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.sobrenosotros,
+.horario,
+.terminos {
+    list-style: none;
+    padding: 0;
+    width: 22%;
+    min-width: 200px;
+}
+
+.sobrenosotros p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.sobrenosotros li,
+.horario li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.terminos li {
+    margin-bottom: 8px;
+}
+
+.terminos a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 14px;
+}
+
+.terminos a:hover {
+    color: #007bff;
+}
+
+.tabla-horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-horario td {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #f4f4f4;
+}
+
+.tabla-horario td:last-child {
+    color: #007bff;
+    text-align: right;
+}
+
+.imgfooter {
+    width: 35px;
+    height: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.terminos li img {
+    display: inline-block;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.footer p {
+    color: #f4f4f4;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
