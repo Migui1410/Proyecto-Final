@@ -17,10 +17,91 @@
         </ul>
     </header>
     <main>
-        
+    <section id="carrusel">
+            <article class="artcarrusel">
+                <!--Imagen 1-->
+                <div class="slide">
+                    <img src="img/carruselimg1.jpg" alt="Imagen de paciente con especialista">
+                    <div class="overlay">
+                        <h2>Soluciones Adaptadas a cada paciente</h2>
+                        <a class="btnDetalles" href="#">Ver más Detalles</a>
+                    </div>
+                </div>
+                <!--Imagen 2-->
+                <div class="slide">
+                    <img src="img/carruselimg2.jpg" alt="Imagen de especialista analizando una muestra">                
+                    <div class="overlay2">
+                        <h2>Los mejores dentistas de Europa</h2>
+                        <div id="contador">0</div>
+                    </div>
+                </div>
+                <!--Imagen 2-->
+                <div class="slide">
+                    <img src="img/carruselimg3.jpg" alt="Imagen de medicos y enfermos en el hospital">
+                    <div class="overlay3">
+                        <h2>Profesionales en <br>todos los campos <br>
+                        de la medicina</h2>
+                    </div>
+                </div>
+            </article>
+            <article class="buttons">
+                <button onclick="prevSlide()">⟨</button>
+                <button onclick="nextSlide()">⟩</button>
+              </div>
+        </section>
+        <section>
+            <article>
+               
+                <a>Buenas</a>
+            </article>
+        </section>
     </main>
     <footer>
 
     </footer>
+   <script>
+    /*-----Script Funcionamiento carrusel-----*/
+        let index = 0; //Contador de imagenes a mostrar del carrusel
+        const carrusel = document.querySelector('.artcarrusel');//Seleccionamos contenedor del carrusel y lo guardamos en una variable
+        const total = document.querySelectorAll('.artcarrusel .slide').length; //Buscamos todos los elementos de clase slide dentro artcarrusel y tamaño para saber número imagenes
+        
+    function nextSlide() {
+        index = (index + 1) % total; // Incrementa el índice para mostrar la siguiente imagen
+        carrusel.style.transform = `translateX(-${index * 100}vw)`; 
+        resetInterval();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + total) % total; // Decrementa el índice para mostrar la imagen anterior
+        carrusel.style.transform = `translateX(-${index * 100}vw)`; 
+        resetInterval();
+    }
+
+    function startAutoSlide() {
+    intervalId = setInterval(nextSlide, 4000);
+    
+}
+    // Detener el intervalo actual (si lo hay) y reiniciarlo
+    function resetInterval() {
+        clearInterval(intervalId); // Detener el intervalo actual
+        startAutoSlide(); // Iniciar un nuevo intervalo
+    }
+    // Iniciar el intervalo automáticamente cuando la página carga
+    startAutoSlide();
+
+
+/*///////// /*-----Script Contador de Sonrisas-----*/
+    /*let numero = 0;
+    const contador = document.getElementById("contador");
+
+    const intervalo = setInterval(() => {
+    numero++;
+    contador.textContent = numero;
+
+    if (numero >= 100) {
+        clearInterval(intervalo); // Detiene el contador al llegar a 100
+    }
+    }, 50);/*/////////////////////////
+    </script>
 </body>
-</html>
+</html> 
