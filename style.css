@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*----------------------------------------PAGINA INDEX-------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+
 /*--------------------------------------*/
 /*--------------Header------------------*/
 /*--------------------------------------*/
@@ -582,6 +588,113 @@ body{
 .terapias button:hover {
     background-color: #2980b9;
 }
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-------------------------------------PAGINA CONTACTO-------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+
+.seccion-formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.formulario-contacto {
+    padding: 40px;
+}
+
+.grupo-formulario-contacto {
+    margin-bottom: 25px;
+}
+
+.etiqueta-formulario-contacto {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.campo-formulario-contacto {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.campo-formulario-contacto:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.boton-enviar-contacto {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.boton-enviar-contacto:hover {
+    background-color: #2980b9;
+}
+
+.info-contacto {
+    background-color: #f8f9fa;
+    padding: 40px;
+    position: relative;
+}
+
+.lista-info-contacto {
+    list-style: none;
+}
+
+.item-info-contacto {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.icono-info-contacto {
+    margin-right: 15px;
+    color: #3498db;
+    font-size: 1.5rem;
+}
+
+.texto-info-contacto h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.texto-info-contacto p {
+    color: #7f8c8d;
+}
+
+.mapa-contacto {
+    height: 300px;
+    background-color: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .seccion-formulario-contacto {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /*--------------------------------------*/
 /*--------------FOOTER------------------*/
