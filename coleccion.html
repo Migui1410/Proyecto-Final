@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Clinica Via Parque</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html"><img src="./img/logo.png" alt="Logo de la empresa ViaParque"></a>
+        <ul class="menu">
+            <li><a href="index.html">La clinica</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="coleccion.html">Coleccion</a></li>
+        </ul>
+    </header>
+    <main>    
+    <h1 style="text-align: center;">Lista de Elementos JSON</h1>
+
+    <div id="contenedor"></div>
+    <!-- Cargar el archivo de colección -->
+    <script src="./js/coleccion.js"></script>
+    <script>
+    const contenedor = document.getElementById('contenedor');
+
+    for (let i = 0; i < coleccion.length; i++) {
+    const elemento = coleccion[i];
+
+    const div = document.createElement('div');
+    div.classList.add('item');
+    div.innerHTML = `
+        <strong>"ID":</strong> ${elemento.id}<br>
+        <strong>"Nombre":</strong> ${elemento.nombre}<br>
+        <strong>"Valor":</strong> ${elemento.valor}
+    `;
+    contenedor.appendChild(div);
+    }
+  </script>
+    </main>
+    <footer>
+        <div class="listasf">
+          <ul class="sobrenosotros">
+            <h3>SOBRE NOSOTROS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada augue non ullamcorper facilisis.</p>
+            <li>📍 Address: 20 , New York 10010</li>
+            <li>📞 Phone: +34 616481</li>
+            <li>📧 Email: info@yourdomain.com</li>
+          </ul>
+      
+          <ul class="terminos">
+            <h3>EMPRESA</h3>
+            <li><a href="https://www.doctoralia.es/clinicas/clinica-via-parque">Sobre la clínica</a></li>
+            <li><a href="coleccion.html">Equipo</a></li>
+            <li><a href="https://www.facebook.com/ClinicaViaParque/">Blog y Noticias</a></li>
+            <li><a href="https://www.aepd.es/">Protección de datos</a></li>
+            <li><a href="https://www.fisterra.com/guias-clinicas/como-formular-preguntas-clinicas-contestables/">Preguntas</a></li>
+          </ul>
+      
+          <div class="horario">
+            <h3>HORARIO</h3>
+            <table class="tabla-horario">
+              <tr>
+                <td>Lunes – Martes</td>
+                <td>10:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Miércoles – Jueves</td>
+                <td>10:00 – 17:00</td>
+              </tr>
+              <tr>
+                <td>Viernes</td>
+                <td>10:00 – 12:30</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>10:00 – 12:30</td>
+              </tr>
+              <tr>
+                <td>Domingo</td>
+                <td>Cerrado</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Copyright © 2025 All Rights Reserved.</p>
+        </div>
+      </footer>
+</body>
+</html>
