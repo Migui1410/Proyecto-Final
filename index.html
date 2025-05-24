@@ -10,6 +10,7 @@
 <body>
     <header>
         <a class="logo" href="index.html"><img src="./img/logo.png" alt="Logo de la empresa ViaParque"></a>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
         <ul class="menu">
             <li><a href="index.html">La clinica</a></li>
             <li><a href="contacto.html">Contacto</a></li>
@@ -136,6 +137,14 @@
       </footer>
       
    <script>
+  
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+
     /*-----Script Funcionamiento carrusel-----*/
         let index = 0; //Contador de imagenes a mostrar del carrusel
         const carrusel = document.querySelector('.artcarrusel');//Seleccionamos contenedor del carrusel y lo guardamos en una variable

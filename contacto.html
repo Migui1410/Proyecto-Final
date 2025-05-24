@@ -9,6 +9,7 @@
 <body class="pagina-contacto">
     <header>
         <a class="logo" href="index.html"><img src="./img/logo.png" alt="Logo de la empresa ViaParque"></a>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
         <ul class="menu">
             <li><a href="index.html">La clinica</a></li>
             <li><a href="contacto.html">Contacto</a></li>
@@ -126,5 +127,13 @@
           <p>Copyright © 2025 All Rights Reserved.</p>
         </div>
       </footer>
+    <script>
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+      </script>
 </body>
 </html>

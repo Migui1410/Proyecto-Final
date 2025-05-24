@@ -722,20 +722,29 @@ body{
 /*--------------------------------------*/
 /*--------------COLECCION------------------*/
 /*--------------------------------------*/
- #contenedor {
-      padding: 20px;
-      border: 2px solid #ccc;
-      width: fit-content;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-    }
-    .item {
-      border: 1px solid #999;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      background-color: #f9f9f9;
-    }
+
+#contenedor {
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: fit-content;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .item {
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    /* opcional: ancho fijo para que se vean uniformes */
+    width: 200px;
+  }
 
 /*--------------------------------------*/
 /*--------------FOOTER------------------*/
