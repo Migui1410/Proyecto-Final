@@ -26,10 +26,6 @@ header{
     height: 10vh;
     width: 100%;
 }
-/*.menu{
-   display: flex;
-   justify-content: space-around;
-}*/
 
 /*Logo*/
 .logo {
@@ -89,7 +85,7 @@ header{
         padding: 0 20px;
     }
 
-    /* Mostrar botón hamburguesa */
+    /* Mostrar botón */
     .menu-toggle {
         display: block;
     }
@@ -493,8 +489,8 @@ main{
     justify-content: center;
     align-items: center;
     color: #2c3e50;
-    position: relative; /* Added to contain absolute positioned children */
-    overflow: hidden; /* Added to contain the zoom effect */
+    position: relative; 
+    overflow: hidden; 
 }
 
 .fisio .imagen-pequena,.fisio .imagen-fondo {
