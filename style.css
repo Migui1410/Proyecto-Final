@@ -783,33 +783,29 @@ main{
 /*--------------------------------------*/
 
 #contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid #ccc;
-    width: fit-content;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  width: 880px; /* 4 items de 200px + 3 gaps de 20px */
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #fdfdfd;
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  .item {
-    border: 1px solid #999;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-        box-sizing: border-box;
-
-
-    /* opcional: ancho fijo para que se vean uniformes */
-    width: 200px;
-  }
+.item {
+  border: 1px solid #999;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 200px;
+  box-sizing: border-box;
+  text-align: center;
+}
    
 
 /*--------------------------------------*/
