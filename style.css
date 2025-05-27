@@ -782,17 +782,35 @@ main{
 /*--------------COLECCION------------------*/
 /*--------------------------------------*/
 
- #contenedor {
+#contenedor {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: fit-content;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
   }
   .item {
-    width: calc(25% - 20px); /* 4 por fila con espacio */
-    border: 1px solid #ccc;
+    border: 1px solid #999;
     padding: 10px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+        box-sizing: border-box;
+
+
+    /* opcional: ancho fijo para que se vean uniformes */
+    width: 200px;
   }
+   
 
 /*--------------------------------------*/
 /*--------------FOOTER------------------*/
