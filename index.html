@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +11,170 @@
 <body>
     <header>
         <a class="logo" href="index.html"><img src="./img/logo.png" alt="Logo de la empresa ViaParque"></a>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
         <ul class="menu">
-            <li><a href="#">La clinica</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Coleccion</a></li>
+            <li><a href="index.html">La clinica</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="coleccion.html">Coleccion</a></li>
         </ul>
     </header>
     <main>
-        
+    <section id="carrusel">
+            <article class="artcarrusel">
+                <!--Imagen 1-->
+                <div class="slide">
+                    <img src="img/carruselimg1.jpg" alt="Imagen de paciente con especialista">
+                    <div class="overlay">
+                        <h2>Soluciones Adaptadas a cada paciente</h2>
+                        <a class="btnDetalles" href="#">Ver más Detalles</a>
+                    </div>
+                </div>
+                <!--Imagen 2-->
+                <div class="slide">
+                    <img src="img/carruselimg2.jpg" alt="Imagen de especialista analizando una muestra">                
+                    <div class="overlay2">
+                        <h2>Los mejores dentistas de Europa</h2>
+                    </div>
+                </div>
+                <!--Imagen 2-->
+                <div class="slide">
+                    <img src="img/carruselimg3.jpg" alt="Imagen de medicos y enfermos en el hospital">
+                    <div class="overlay3">
+                        <h2>Profesionales en <br>todos los campos <br>
+                        de la medicina</h2>
+                    </div>
+                </div>
+            </article>
+            <article class="buttons">
+                <button onclick="prevSlide()">⟨</button>
+                <button onclick="nextSlide()">⟩</button>
+              </div>
+        </section>
+        <section class="servicios">
+          <h2>Servicios Generales</h2>
+            <article class="servicios1">
+               <div class="odontologia">
+                  <h3>Odontologia</h3>
+                  <p>La odontología es la rama de la medicina encargada de la prevención, 
+                    diagnóstico y tratamiento de las enfermedades y 
+                    condiciones que afectan la salud bucal.</p>
+                    <button> Conoce mas &rarr;</button>
+               </div>
+               
+               <div class="implantes">
+                  <div class="imagen-pequena"></div>
+                  <div class="imagen-fondo"></div>
+                  <h3>Implantes</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <button>Más información →</button>
+               </div>
+            </article>
+            <article class="servicios2">
+                <div class="fisio">
+                  <div class="imagen-pequena"></div>
+                  <div class="imagen-fondo"></div>
+                  <h3>Fisio</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <button>Más información →</button>
+                </div>
+                <div class="terapias">
+                    <h3>Terapias</h3>
+                    <p>La odontología es la rama de la medicina encargada de la prevención, 
+                      diagnóstico y tratamiento de las enfermedades y 
+                      condiciones que afectan la salud bucal.</p>
+                      <button> Conoce mas &rarr;</button>
+                </div>
+            </article>
+        </section>
     </main>
     <footer>
+        <div class="listasf">
+          <ul class="sobrenosotros">
+            <h3>SOBRE NOSOTROS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada augue non ullamcorper facilisis.</p>
+            <li>📍 Address: 20 , New York 10010</li>
+            <li>📞 Phone: +34 616481</li>
+            <li>📧 Email: info@yourdomain.com</li>
+          </ul>
+      
+          <ul class="terminos">
+            <h3>EMPRESA</h3>
+            <li><a href="https://www.doctoralia.es/clinicas/clinica-via-parque">Sobre la clínica</a></li>
+            <li><a href="coleccion.html">Equipo</a></li>
+            <li><a href="https://www.facebook.com/ClinicaViaParque/">Blog y Noticias</a></li>
+            <li><a href="https://www.aepd.es/">Protección de datos</a></li>
+            <li><a href="https://www.fisterra.com/guias-clinicas/como-formular-preguntas-clinicas-contestables/">Preguntas</a></li>
+          </ul>
+      
+          <div class="horario">
+            <h3>HORARIO</h3>
+            <table class="tabla-horario">
+              <tr>
+                <td>Lunes – Martes</td>
+                <td>10:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Miércoles – Jueves</td>
+                <td>10:00 – 17:00</td>
+              </tr>
+              <tr>
+                <td>Viernes</td>
+                <td>10:00 – 12:30</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>10:00 – 12:30</td>
+              </tr>
+              <tr>
+                <td>Domingo</td>
+                <td>Cerrado</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Copyright © 2025 All Rights Reserved.</p>
+        </div>
+      </footer>
+      
+   <script>
+  
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
 
-    </footer>
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+
+    /*-----Script Funcionamiento carrusel-----*/
+        let index = 0; //Contador de imagenes a mostrar del carrusel
+        const carrusel = document.querySelector('.artcarrusel');//Seleccionamos contenedor del carrusel y lo guardamos en una variable
+        const total = document.querySelectorAll('.artcarrusel .slide').length; //Buscamos todos los elementos de clase slide dentro artcarrusel y tamaño para saber número imagenes
+        
+    function nextSlide() {
+        index = (index + 1) % total; // Incrementa el índice para mostrar la siguiente imagen
+        carrusel.style.transform = `translateX(-${index * 100}vw)`; 
+        resetInterval();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + total) % total; // Decrementa el índice para mostrar la imagen anterior
+        carrusel.style.transform = `translateX(-${index * 100}vw)`; 
+        resetInterval();
+    }
+
+    function startAutoSlide() {
+    intervalId = setInterval(nextSlide, 4000);
+    
+}
+    // Detener el intervalo actual (si lo hay) y reiniciarlo
+    function resetInterval() {
+        clearInterval(intervalId); // Detener el intervalo actual
+        startAutoSlide(); // Iniciar un nuevo intervalo
+    }
+    // Iniciar el intervalo automáticamente cuando la página carga
+    startAutoSlide();
+
+    </script>
 </body>
-</html>
+</html> 

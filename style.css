@@ -1,24 +1,34 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*--------Menu--------*/
-header{
-    position: absolute;
-display: flex;
-align-items: center;
-background-color: rgba(68, 68, 68, 0.692);
-justify-content: space-around;
-height: 10vh;
-width: 100%;
-}
-/*.menu{
-   display: flex;
-   justify-content: space-around;
-}*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*----------------------------------------PAGINA INDEX-------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
 
+/*--------------------------------------*/
+/*--------------Header------------------*/
+/*--------------------------------------*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    background-color: rgb(138, 138, 138);
+    justify-content: space-around;
+    height: 10vh;
+    width: 100%;
+}
+
+/*Logo*/
 .logo {
     display: flex;
     width: 40%;
@@ -32,6 +42,7 @@ width: 100%;
     /*background-color: rgb(145, 142, 144);*/
 }
 
+/*Lista del menu*/
 .menu{
     display: flex;
     width: 100%;
@@ -57,4 +68,842 @@ width: 100%;
     border-bottom: 1px solid white;
 }
 
+/* Ocultar botón hamburguesa por defecto */
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajustar header para que sea más compacto */
+    header {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    /* Mostrar botón */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ocultar menú por defecto */
+    .menu {
+        position: fixed;
+        top: 10vh; /* justo debajo del header */
+        right: 0;
+        background-color: rgb(138, 138, 138);
+        width: 200px;
+        height: calc(100vh - 10vh);
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        z-index: 20;
+    }
+
+    .menu li {
+        width: 100%;
+        margin: 15px 0;
+        padding-left: 20px;
+    }
+
+    .menu li a {
+        font-size: 1.2em;
+        display: block;
+        width: 100%;
+    }
+
+    /* Clase para mostrar menú */
+    .menu.open {
+        transform: translateX(0);
+    }
+}
+
+/*--------------*/
+/*---Carrusel---*/
+/*--------------*/
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden; /*oculta scroll horizontal*/
+}
+main{
+    margin-top: 10vh;
+    flex: 1
+}
+
+
+#carrusel{
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.artcarrusel{
+    display: flex;
+    width: 300vw; /*Cantidad de imagenes x100*/
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.artcarrusel img{
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+/*Capa de color encima de las imagenes carrusel*/
+
+/*Imagen 1*/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.712); /* Color semitransparente */
+    display: flex;
+    color: white;
+    flex-direction: column; /* Apila los elementos de arriba hacia abajo */
+    justify-content: center;
+    align-items: center; 
+    width: 100%; 
+  }
+  .overlay .btnDetalles {
+    display: block;
+    margin-top: 20px;     
+    padding: 20px 20px;
+    margin-top: 20px; 
+    background-color: rgb(105, 105, 105); 
+    color: white;
+    width: fit-content;
+    text-decoration: none; 
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition:  0.5s ease;
+    transform: scale(1);
+}
+
+.overlay .btnDetalles:hover{
+    background-color: rgb(214, 212, 212); 
+    color: black;
+    transform: scale(1.2);
+}   
+
+/*Imagen 2*/
+.overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.712); /* Color semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .overlay3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.712); /* Color semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .overlay h2,.overlay2 h2,.overlay3 h2 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+/*---Botones de navegación---*/
+.buttons {
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9; /*Asegura botones encima imágenes*/
+    width: 100%; 
+}
+
+.buttons button {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+/*-------------------------------------*/
+/*----------Seccion Servicios----------*/
+/*-------------------------------------*/
+
+.servicios{
+    width: 100vw;
+    margin: 5% auto;
+  }
+  
+  .servicios h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    text-decoration: underline;
+}
+  article.servicios1,
+  article.servicios2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    gap: 20px;
+  }
+  article.servicios1 > div,
+  article.servicios2 > div{
+    background-color: rgba(138, 138, 138, 0.473);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } 
+
+/*--------------------*/
+ /*---ODONTOLOGIA---*/
+/*-------------------*/
+  .odontologia{
+    width: 63vw;
+    margin-left: 2vw;
+    background-image: url("./img/fondo_servicios_odontologia.jpg");
+    background-position: left center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .odontologia::before {
+    content: ''; /*Darle un valor a el before*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/fondo_servicios_odontologia.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.odontologia:hover::before {
+    transform: scale(1.05);
+}
+
+.odontologia h3 {
+    position: relative;
+    z-index: 2;
+    margin: 30px 30px 0 50%;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.odontologia p {
+    position: relative;
+    z-index: 2;
+    margin: 15px 30px 0 50%;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.odontologia button {
+    position: relative;
+    z-index: 2;
+    margin: 20px 30px 0 50%;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.odontologia button:hover {
+    background-color: #2980b9;
+}
+
+/*--------------------*/
+ /*---IMPLANTES---*/
+/*-------------------*/
+
+.implantes {
+    position: relative;
+    margin-right: 2vw;
+    width: 33vw;
+    height: 40vh;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+
+}
+
+.implantes .imagen-pequena, .implantes .imagen-fondo {
+    position: absolute;
+    background-image: url('img/diente2.png');
+    background-size: cover;
+    background-position: top;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*Imagen pequeña (inicialmente visible)*/
+.implantes .imagen-pequena {
+        width: 6vw;
+        height: 12vh;
+        border-radius: 50%;
+        top: 2vh;
+        z-index: 3;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Imagen de fondo (inicialmente oculta) */
+.imagen-fondo {
+    width: 18vw;
+    height: 40vh;
+    opacity: 0;
+    z-index: 1;
+    transform: scale(0.8);
+}
+
+.implantes h3 {
+    position: relative;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.implantes p {
+    position: relative;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.implantes button {
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+}
+
+/* Efectos al hacer hover */
+.implantes:hover .imagen-pequena {
+    transform: translateY(100px) scale(0.1);
+    opacity: 0;
+}
+
+.implantes:hover .imagen-fondo {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.implantes:hover h3 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.implantes:hover p,
+.implantes:hover button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*--------------------*/
+ /*-----FISIO------*/
+/*-------------------*/
+.fisio {
+    margin-left: 2vw;
+    width: 33vw;
+    height: 40vh;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.fisio .imagen-pequena,.fisio .imagen-fondo {
+    position: absolute;
+    background-image: url('img/fisioterapia.png');
+    background-size: cover;
+    background-position: top;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*Imagen pequeña (inicialmente visible)*/
+.fisio .imagen-pequena {
+    width: 6vw;
+    height: 12vh;
+    border-radius: 50%;
+    top: 3vh;
+    z-index: 3;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Imagen de fondo (inicialmente oculta) */
+.fisio .imagen-fondo {
+    width: 20vw;
+    height: 37vh;
+    opacity: 0;
+    z-index: 1;
+    transform: scale(0.8);
+}
+
+.fisio h3 {
+    position: relative;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.fisio p {
+    position: relative;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.fisio button {
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+}
+
+/* Efectos al hacer hover */
+.fisio:hover .imagen-pequena {
+    transform: translateY(100px) scale(0.1);
+    opacity: 0;
+}
+
+.fisio:hover .imagen-fondo {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.fisio:hover h3 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.fisio:hover p,
+.fisio:hover button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fisio button:hover{
+    background-color: #2c333a;
+}
+
+/*--------------------*/
+ /*-----TERAPIAS-----*/
+/*-------------------*/
+.terapias {
+    width: 63vw;
+    margin-right: 2vw;
+    background-image: url("./img/fondo_servicios_terapias.jpg");
+    background-position: left center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.terapias::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/fondo_servicios_terapias.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.terapias:hover::before {
+    transform: scale(1.05);
+}
+
+.terapias h3 {
+    position: relative;
+    z-index: 2;
+    margin: 30px 50% 0 30px ;
+    color: #d7d8d8;
+    font-size: 1.5rem;
+    text-align: left;
+    text-decoration: bold;
+}
+
+.terapias p {
+    position: relative;
+    z-index: 2;
+    margin: 15px 50% 0 30px ;
+    color: #e8e9eb;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.terapias button {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 50% 0 30px;
+}
+
+.terapias button:hover {
+    background-color: #2c333a;
+}
+
+
+
+.odontologia:hover, .implantes:hover, .fisio:hover, .terapias:hover {
+    transform: translateY(-5px); /* Efecto de levantar */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Botones */
+.odontologia button, .implantes button, .fisio button, .terapias button {
+    background-color: #2a2a2b;
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-------------------------------------PAGINA CONTACTO-------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
+
+.seccion-formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.formulario-contacto {
+    padding: 40px;
+}
+
+.grupo-formulario-contacto {
+    margin-bottom: 25px;
+}
+
+.etiqueta-formulario-contacto {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.campo-formulario-contacto {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.campo-formulario-contacto:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.boton-enviar-contacto {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.boton-enviar-contacto:hover {
+    background-color: #2980b9;
+}
+
+.info-contacto {
+    background-color: #f8f9fa;
+    padding: 40px;
+    position: relative;
+}
+
+.lista-info-contacto {
+    list-style: none;
+}
+
+.item-info-contacto {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.icono-info-contacto {
+    margin-right: 15px;
+    color: #3498db;
+    font-size: 1.5rem;
+}
+
+.texto-info-contacto h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.texto-info-contacto p {
+    color: #7f8c8d;
+}
+
+.mapa-contacto {
+    height: 30vh;
+    background-color: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 30px;
+    width: 50vw;
+}
+
+.mapa-contacto iframe{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .seccion-formulario-contacto {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*--------------------------------------*/
+/*--------------COLECCION------------------*/
+/*--------------------------------------*/
+
+#contenedor {
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: fit-content;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .item {
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    /* opcional: ancho fijo para que se vean uniformes */
+    width: 200px;
+  }
+
+/*--------------------------------------*/
+/*--------------FOOTER------------------*/
+/*--------------------------------------*/
+
+footer {
+    background-color: rgba(63, 62, 62, 0.986);
+    width: 100vw;
+    padding: 2% 0;
+    font-family: Arial, sans-serif;
+}
+
+.listasf {
+    color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    text-align: left;
+}
+
+.listasf h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.sobrenosotros,
+.horario,
+.terminos {
+    list-style: none;
+    padding: 0;
+    width: 22%;
+    min-width: 200px;
+}
+
+.sobrenosotros p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.sobrenosotros li,
+.horario li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.terminos li {
+    margin-bottom: 8px;
+}
+
+.terminos a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 14px;
+}
+
+.terminos a:hover {
+    color: #007bff;
+}
+
+.tabla-horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-horario td {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #f4f4f4;
+}
+
+.tabla-horario td:last-child {
+    color: #007bff;
+    text-align: right;
+}
+
+.imgfooter {
+    width: 35px;
+    height: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.terminos li img {
+    display: inline-block;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.footer p {
+    color: #f4f4f4;
+    font-size: 14px;
+    text-align: center;
+}
